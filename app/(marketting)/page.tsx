@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui/button";
 import Image from "next/image";
 
 export default function Home() {
@@ -13,6 +14,9 @@ export default function Home() {
           Sort makes it effortless to find and arrange meetups in your area, so
           you can spend less time planning and more time enjoying yourself.
         </p>
+        <Button variant="primary" className="self-start ml-6 mt-4">
+          Join Easy Sort
+        </Button>
       </div>
       <div className="relative w-[240px] h-[240px] lg:w-[424px] lg:h-[424px] mb-8 lg:mb-0">
         <Image src="/hero.png" fill alt="hero" />
