@@ -1,5 +1,6 @@
 import React from "react";
 import Header from "../(marketting)/header";
+import SearchContextProvider from "@/providers/SearchContextProvider";
 
 export interface MainLayoutProps {
   children: React.ReactNode;

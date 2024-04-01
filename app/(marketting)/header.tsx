@@ -4,6 +4,7 @@ import {
   ClerkLoaded,
   ClerkLoading,
   SignInButton,
+  SignUpButton,
   SignedIn,
   SignedOut,
   UserButton,
@@ -31,17 +32,28 @@ const Header = ({ signedIn = false }: HeaderProps) => {
           <SignedIn>
             <UserButton afterSignOutUrl="/" />
           </SignedIn>
-          <SignedOut>
-            <SignInButton
-              mode="modal"
-              afterSignInUrl="/find"
-              afterSignUpUrl="/find"
-            >
-              <Button size="lg" variant="ghost">
-                Sign In
-              </Button>
-            </SignInButton>
-          </SignedOut>
+          <div className="flex gap-x-1">
+            <SignedOut>
+              <SignInButton
+                mode="modal"
+                afterSignInUrl="/find"
+                afterSignUpUrl="/find"
+              >
+                <Button size="lg" variant="ghost">
+                  Sign In
+                </Button>
+              </SignInButton>
+              <SignUpButton
+                mode="modal"
+                afterSignInUrl="/find"
+                afterSignUpUrl="/find"
+              >
+                <Button size="lg" variant="primary">
+                  Sign Up
+                </Button>
+              </SignUpButton>
+            </SignedOut>
+          </div>
         </ClerkLoaded>
       </div>
     </header>
