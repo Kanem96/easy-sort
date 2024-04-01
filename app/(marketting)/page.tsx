@@ -1,4 +1,11 @@
 import { Button } from "@/components/ui/button";
+import {
+  ClerkLoaded,
+  ClerkLoading,
+  SignUpButton,
+  SignedOut,
+} from "@clerk/nextjs";
+import { Loader } from "lucide-react";
 import Image from "next/image";
 
 export default function Home() {
@@ -14,9 +21,22 @@ export default function Home() {
           Sort makes it effortless to find and arrange meetups in your area, so
           you can spend less time planning and more time enjoying yourself.
         </p>
-        <Button variant="primary" className="self-start ml-6 mt-4">
-          Join Easy Sort
-        </Button>
+        <div className="self-start ml-6">
+          <ClerkLoading>
+            <Loader className="h-5 w-5 text-muted-foreground animate-spin" />
+          </ClerkLoading>
+          <ClerkLoaded>
+            <SignedOut>
+              <SignUpButton
+                mode="modal"
+                afterSignInUrl="/find"
+                afterSignUpUrl="/find"
+              >
+                <Button variant="primary">Join Easy Sort</Button>
+              </SignUpButton>
+            </SignedOut>
+          </ClerkLoaded>
+        </div>
       </div>
       <div className="relative w-[240px] h-[240px] lg:w-[424px] lg:h-[424px] mb-8 lg:mb-0">
         <Image src="/hero.png" fill alt="hero" />
